@@ -1,3 +1,4 @@
+LANGUAGE=FRENCH
 all: hello-world fancy inter
 fancy : fancy_hello_world
 
@@ -6,9 +7,9 @@ fancy_hello_world : fancy_hello_world.o
 fancy_hello_world.o : fancy_hello_world.c 
 	cc -c -Wall -g fancy_hello_world.c 
 inter : hello_world_inter.o
-	cc -g -o hello_world_inter hello_world_inter.o
+	cc -g -o hello_world_inter hello_world_inter.o 
 hello_world_inter.o : hello_world_inter.c
-	cc -c -Wall -g hello_world_inter.c 
+	cc -c -Wall -g hello_world_inter.c -D$(LANGUAGE)
 hello-world: hello-world.o
 	cc -g -o hello-world hello-world.o
  
